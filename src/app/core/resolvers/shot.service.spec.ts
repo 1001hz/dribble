@@ -1,15 +1,19 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { DataServiceMock } from '../services/data.service.mock';
+import { DataService } from '../../core/services/data.service';
+import { ShotResolve } from './shot.service';
+import { Observable } from 'rxjs/Observable';
 
-import { ShotService } from './shot.service';
+describe('ShotResolve', () => {
+  let dataServiceMock;
 
-describe('ShotService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ShotService]
+      providers: [ShotResolve, { provide: DataService, useClass: DataServiceMock }]
     });
   });
 
-  it('should be created', inject([ShotService], (service: ShotService) => {
-    expect(service).toBeTruthy();
+  it('should be created', inject([ShotResolve], (shotResolve: ShotResolve) => {
+    expect(shotResolve).toBeTruthy();
   }));
 });

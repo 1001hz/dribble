@@ -11,11 +11,12 @@ export class DetailsComponent implements OnInit {
 
   public shot: IShot;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.shot = this.route.snapshot.data['shot'];
-    console.log(this.shot);
   }
 
 }

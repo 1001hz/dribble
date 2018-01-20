@@ -10,6 +10,14 @@ export class ApiService {
   getShots(): Observable<Array<IShot>> {
 
     //TODO: hook up to API
+    /*
+    NOTE the V2 API only supports OAuth implementation.
+    There is no client only implementation using an access token
+    Server implementation using a secret is required.
+    V1 API is deprecated
+
+    Dummy data below...
+    */
     return Observable.of(
       [
         {

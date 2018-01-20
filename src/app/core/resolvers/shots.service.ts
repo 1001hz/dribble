@@ -10,7 +10,7 @@ export class ShotsResolve implements Resolve<Observable<Array<IShot>>> {
   constructor(private dataService: DataService) { }
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.dataService.fetchShots().first();
+    return this.dataService.fetchShots();
   }
 
 }
