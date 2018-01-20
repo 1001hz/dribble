@@ -4,11 +4,13 @@ import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { ItemComponent } from './item/item.component';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CoreModule
   ],
   declarations: [ListComponent, DetailsComponent, ItemComponent]
 })

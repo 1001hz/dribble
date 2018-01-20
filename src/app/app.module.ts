@@ -7,7 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from './core/core.module';
 
 import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/first'
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @NgModule({
   declarations: [

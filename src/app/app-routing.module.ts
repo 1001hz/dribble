@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ShotsResolve } from './core/resolvers';
+import { ShotsResolve, ShotResolve } from './core/resolvers';
 
 import { ListComponent, DetailsComponent } from './components';
 
@@ -13,7 +13,13 @@ let appRoutes = [
       shots: ShotsResolve
     }
   },
-  { path: 'details/:id', component: DetailsComponent}
+  { 
+    path: 'details/:id', 
+    component: DetailsComponent,
+    resolve: {
+      shot: ShotResolve
+    }
+  }
 ];
 
 @NgModule({

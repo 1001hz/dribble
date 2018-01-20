@@ -1,0 +1,28 @@
+.list {
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    padding: 0;
+    margin: 0 0 $base-padding-md 0;
+    overflow: hidden;
+  }
+}
+
+@include tablet() {
+  .list {
+    &__item {
+      @include grid-item(2);
+    }
+  }
+}
+
+@include desktop() {
+  .list {
+    &__item {
+      @include grid-item(3);
+    }
+  }
+}

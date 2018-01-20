@@ -1,0 +1,116 @@
+.item {
+
+  position: relative;
+  color: $white;
+  text-decoration: none;
+  background-color: $black;
+
+  &:after {
+    content: '';
+    background-color: $black;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4em;
+    z-index: 1;
+  }
+
+  &__image {
+    width: 100%;
+    vertical-align: text-bottom;
+    transition: transform $base-duration ease-in;
+    &:hover {
+      transform: scale(1.05);
+      transition: transform $base-duration ease-in;
+    }
+
+    &--details {
+      &:hover {
+        transform: scale(1);
+        transition: none;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 $base-padding;
+    height: 4em;
+
+    h2 {
+      @include valign();
+      font-weight: normal;
+      font-size: 1.4em;
+      @include grid-item(2);
+    }
+  }
+
+  &__count-wrapper {
+    @include grid-item(2);
+    text-align: right;
+    @include valign();
+  }
+
+  &__count {
+    font-size: 1.4em;
+    display: inline-block;
+    margin-left: $base-padding;
+  }
+
+  &__count-icon {
+    font-size: 1.4em;
+  }
+
+  &__details {
+    margin-top: $base-padding-md;
+  }
+
+  &__auth-name {
+    display: inline-block;
+    font-weight: bold;
+    @include valign();
+    font-size: 1.2em;
+  }
+
+  &__auth-avatar {
+    margin-right: $base-padding-md;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    vertical-align: middle;
+  }
+}
+
+@include desktop() {
+
+  .item {
+
+    &__title {
+      h2 {
+        font-size: 2em;
+      }
+    }
+
+    &__auth-avatar {
+      width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    }
+
+    &__count {
+      font-size: 1.5em;
+    }
+  
+    &__count-icon {
+      font-size: 1.5em;
+    }
+  }
+
+}

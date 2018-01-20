@@ -1,0 +1,8 @@
+@mixin valign($offset: 0) {
+  position: relative;
+  top: 50%;
+  @if $offset {
+    top: calc(50% + #{$offset}px);
+  }
+  transform: translateY(-50%);
+}

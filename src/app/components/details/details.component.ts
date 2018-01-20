@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IShot } from '../../shared/models';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  public shot: IShot;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.shot = this.route.snapshot.data['shot'];
+    console.log(this.shot);
   }
 
 }

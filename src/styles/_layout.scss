@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: $background-color;
+}
+.wrapper {
+  padding: $base-padding-md;
+}
+
+@include tablet() {
+  .wrapper {
+    max-width: $tablet-width;
+    margin: 0 auto;
+
+    &__narrow-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include desktop() {
+  .wrapper {
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    &__narrow-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
