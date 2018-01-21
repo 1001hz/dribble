@@ -20,7 +20,16 @@ export class ActivatedRouteStub {
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
-
+  let dataFromActivatedRoute = 
+  [
+    {
+      id: 1
+    },
+    {
+      id: 2
+    }
+  ];
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DetailsComponent, SafePipe ],
@@ -31,7 +40,13 @@ describe('DetailsComponent', () => {
     .overrideComponent(DetailsComponent, {
       set: {
         providers: [
-          {provide: ActivatedRoute, useClass: ActivatedRouteStub}
+          {provide: ActivatedRoute, useValue: {
+            snapshot: {
+              data: {
+                shots: dataFromActivatedRoute
+              }
+            }
+          }}
         ]
       }})
     .compileComponents();

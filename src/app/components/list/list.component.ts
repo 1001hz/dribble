@@ -11,7 +11,9 @@ export class ListComponent implements OnInit {
 
   public shots: Array<IShot>;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.shots = this.route.snapshot.data['shots'];
