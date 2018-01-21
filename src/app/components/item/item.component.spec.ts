@@ -4,15 +4,17 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 import { SafePipe } from '../../core/pipes/safe.pipe';
-import {Pipe, PipeTransform} from '@angular/core';
+import { Component } from '@angular/core';
 
-@Pipe({name: 'pipename'})
-class MockPipe implements PipeTransform {
-    transform(value: number): number {
-        //Do stuff here, if you want
-        return value;
-    }
-}
+//import {Pipe, PipeTransform} from '@angular/core';
+
+// @Pipe({name: 'pipename'})
+// class MockPipe implements PipeTransform {
+//     transform(value: number): number {
+//         //Do stuff here, if you want
+//         return value;
+//     }
+// }
 
 describe('ItemComponent', () => {
   let component: ItemComponent;

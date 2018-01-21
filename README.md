@@ -1,4 +1,8 @@
-# Dribble
+# Dribbble demo
+
+## Notes
+
+The Dribbble API v1 is depricated. API v2 will only authenticate using OAuth that should use a server implementation. The routes for most popular shots have been removed from the v2 API.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 

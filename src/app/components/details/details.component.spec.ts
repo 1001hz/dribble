@@ -1,41 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SafePipe } from '../../core/pipes/safe.pipe';
 import { DetailsComponent } from './details.component';
-import {
-  RouterTestingModule
-} from '@angular/router/testing';
-
-import { Subscription } from 'rxjs/Subscription';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-
-import { ActivatedRoute, Router } from '@angular/router';
-
-export class ActivatedRouteStub {
-
-  private subject = new BehaviorSubject({id: '123'});
-  public params = this.subject.asObservable();
-}
-
+import { ActivatedRoute } from '@angular/router';
 
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
-  let dataFromActivatedRoute = 
-  [
-    {
-      id: 1
+  let dataFromActivatedRoute = {
+    id: 1,
+    user: {
+      name: ''
     },
-    {
-      id: 2
-    }
-  ];
+    images: ''
+  };
   
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailsComponent, SafePipe ],
-      imports: [
-        RouterTestingModule
-      ]
+      declarations: [ DetailsComponent, SafePipe ]
     })
     .overrideComponent(DetailsComponent, {
       set: {
@@ -43,7 +24,7 @@ describe('DetailsComponent', () => {
           {provide: ActivatedRoute, useValue: {
             snapshot: {
               data: {
-                shots: dataFromActivatedRoute
+                shot: dataFromActivatedRoute
               }
             }
           }}
@@ -55,10 +36,15 @@ describe('DetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailsComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should populate shots local var', () => {
+    expect(component.shot).toEqual(dataFromActivatedRoute);
+  });
+
 });
